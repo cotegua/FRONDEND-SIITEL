@@ -1,7 +1,27 @@
 <template>
   <h1>USUARIO</h1>
   <pre>
-  {{ usuarios }}
+  <table class="min-w-full divide-y shadow-md rounded overflow-hidden">
+    <thead class="bg-gray-200" >
+      <tr >
+      <th>NOMUSER</th>
+      <th>CLAVE</th>      
+      <th>ACCIONES</th>      
+    </tr>
+
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <tr v-for="us in usuarios" key="us">
+        <td class="px-6 py-6 whitespace-nowrap text-sm">{{ us["nomuser"] }}</td>
+        <td>{{us["clave"]}}</td>
+        <td>
+          <button>EDICION</button>
+          <button>ELIMINACION</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
   </pre>
 </template>
 <script setup lang="ts">
